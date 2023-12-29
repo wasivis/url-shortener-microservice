@@ -14,7 +14,7 @@ const urlMappings = {};
 app.post('/api/shorturl', (req, res) => {
   const longUrl = req.body.url;
 
-  const shortUrl = `https://${req.get('host')}/${Object.keys(urlMappings).length + 1}`;
+  const shortUrl = `https://${req.get('host')}/api/shorturl/${Object.keys(urlMappings).length + 1}`;
 
   urlMappings[shortUrl] = longUrl;
 
