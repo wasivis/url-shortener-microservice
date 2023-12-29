@@ -23,7 +23,7 @@ app.post('/api/shorturl', (req, res) => {
 
 app.get('/api/shorturl/:id', (req, res) => {
   const id = req.params.id;
-  const shortUrl = `https://${req.get('host')}/${id}`;
+  const shortUrl = `https://${req.get('host')}/api/shorturl/${id}`;
 
   if (urlMappings.hasOwnProperty(shortUrl)) {
     res.redirect(urlMappings[shortUrl]);
